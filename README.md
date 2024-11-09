@@ -58,6 +58,9 @@ df.shape
  ```
 output: (9900, 2) #9900 data and 2 column 
 
+*First five row:
+![df](Image/dataset.png)
+
 ### TF-IDF Transformation:
 ```bash
 vectorizer = TfidfVectorizer(max_features=5000)

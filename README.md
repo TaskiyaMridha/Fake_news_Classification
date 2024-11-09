@@ -58,8 +58,32 @@ df.shape
  ```
 output: (9900, 2) #9900 data and 2 column 
 
-*First five row:
+**First five row:**
+
 ![df](Image/dataset.png)
+
+## Splitting Data for Training and Testing
+This code splits the data into training and testing sets, with 80% for training and 20% for testing. The split is done randomly, but the random_state=0 ensures consistent results each time.
+
+```bash
+from sklearn.model_selection import train_test_split
+X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2,random_state=0)
+```
+Display a pie chart showing the percentage of data used for training and testing, helping you visualize the split.
+
+```bash
+import matplotlib.pyplot as plt
+
+# Plot the proportion of training and testing data
+labels = ['Train', 'Test']
+sizes = [len(X_train), len(X_test)]
+plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+plt.title('Train-Test Split Proportion')
+plt.savefig('/content/train_test_split.png')
+plt.show()
+```
+![pie](Image/train_test_split.png)
+
 
 ### TF-IDF Transformation:
 ```bash

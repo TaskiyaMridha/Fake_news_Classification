@@ -178,7 +178,7 @@ plt.ylabel('True')
 plt.savefig('confusion_matrix.png')
 plt.show()
 ```
-![CM](confusion_matrix.png)
+![CM](Image/confusion_matrix.png)
 
 ## How to Use
 1. **Clone this repository:**

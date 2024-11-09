@@ -17,6 +17,8 @@ The data includes:
 ### Data Distribution
 A bar chart visualizing class distribution is provided to show the balance between real and fake news articles in the dataset.
 
+![DD](Image/class_distribution.png)
+
 ## Dependencies
 To run this project, ensure you have the following libraries installed:
 - `pandas`

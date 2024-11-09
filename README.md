@@ -9,7 +9,7 @@ The model uses the **TF-IDF** (Term Frequency-Inverse Document Frequency) vector
 The dataset consists of two classes:
 - **Real**: Legitimate news articles
 - **Fake**: Misinformation or unreliable news articles
-
+[Dataset From Kaggle: ]([https://www.google.com](https://www.kaggle.com/datasets/vishakhdapat/fake-news-detection/data))
 The data includes:
 - **Text**: The news article text.
 - **Label**: The classification label (Real/Fake).

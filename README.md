@@ -52,6 +52,7 @@ import seaborn as sns
 df = pd.read_csv('/content/fake_and_real_news.csv')
 ```
 **Dataset Size Check**
+
  df.shape, shows the dimensions of the dataset (number of rows and columns). It helps us understand the dataset's size.
  ```bash
 df.shape

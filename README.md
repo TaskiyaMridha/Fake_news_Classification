@@ -27,15 +27,17 @@ To run this project, ensure you have the following libraries installed:
 Install dependencies using:
 ```bash
 pip install -r requirements.txt
+```
 ## Model Training and Evaluation
 
 1. TF-IDF Vectorization: Converts the article text into a numerical format suitable for machine learning.
 2. Model Training: A LinearSVC model is trained on the vectorized data.
 3. Evaluation: The model is evaluated using accuracy and classification metrics, along with a confusion matrix for visual representation.
 
-### Key Code Sections:
+# Key Code Sections:
+**Import required librariess**
+
 ```bash
-# Import required libraries
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -44,20 +46,40 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 import matplotlib.pyplot as plt
 import seaborn as sns
 ```
-### Data Loading and Preprocessing:
+### Data Loading:
 ```bash
 # Load dataset
 df = pd.read_csv('/content/fake_and_real_news.csv')
-
-# Split into features (X) and target (Y)
-X = df[['Text']]
-Y = df['Label']
 ```
+**Dataset Size Check**
+ df.shape, shows the dimensions of the dataset (number of rows and columns). It helps us understand the dataset's size.
+ ```bash
+df.shape
+ ```
+output: (9900, 2) #9900 data and 2 column 
+
 ### TF-IDF Transformation:
 ```bash
 vectorizer = TfidfVectorizer(max_features=5000)
 X_train_tfidf = vectorizer.fit_transform(X_train['Text'])
 X_test_tfidf = vectorizer.transform(X_test['Text'])
+```
+##Label Slicing
+This code selects parts of the dataset:\
+X takes the first column (probably the news text). Y takes the last column (likely the labels, like real or fake).
+```bash
+X=df.iloc[:,0:1]
+Y=df.iloc[:,-1]
+```
+This code creates a bar chart to show how many real and fake news articles are in the dataset. It counts the labels in Y and displays the result with labels for clarity
+```bash
+import matplotlib.pyplot as plt
+
+Y.value_counts().plot(kind='bar')
+plt.title('Class Distribution (Real vs. Fake)')
+plt.xlabel('Class')
+plt.ylabel('Count')
+plt.show()
 ```
 ### Model Training and Prediction
 ```bash
